@@ -18,8 +18,12 @@ funBusImage.addEventListener('mouseleave', (e) => {
 const navColorChange = document.querySelector('.main-navigation');
     navColorChange.addEventListener('mouseenter', (e) => {
         event.target.style.backgroundColor = '#0ec0b1';
+        event.target.style.transition = 'all 0.5s';
     });
 
+    navColorChange.addEventListener('mouseleave', (e) => {
+        event.target.style.backgroundColor = 'white'
+    });
 
 //---------------------------------------------------------------------------------
 //event handlers
@@ -41,6 +45,50 @@ const eventHandlerThree = event => {
     event.target.style.transition = 'all 2.5s';
     event.target.style.opacity = '0';
 };
+
+const eventHandlerFour = event => {
+    event.target.style.transform = 'scale(1.5)';
+    event.target.style.transition = 'all 0.50s';
+    event.target.style.color = 'orange';
+};
+
+const eventHandlerFive = event => {
+    event.target.style.transform = 'scale(1)';
+event.target.style.color = 'black';
+};
+
+const eventHandlerSix = event => {
+    event.target.style.transition = 'all 1.75s';
+    event.target.style.opacity = '50';
+};
+
+
+//------------------------------------------------------------------------------------
+//nav anchor tag animation
+
+
+const navAnchorEnlarge = document.querySelectorAll('.container nav a');
+    navAnchorEnlarge.forEach(navA => {
+        navA.addEventListener('mouseover', eventHandlerFour);
+    })
+
+const navAnchorNormalize = document.querySelectorAll('.container nav a');
+    navAnchorNormalize.forEach(navA => {
+        navA.addEventListener('mouseleave', eventHandlerFive);
+    })
+
+
+// const navAnchor = document.querySelector('.container nav a');
+// navAnchor.addEventListener('mouseover', (e) => {
+//     event.target.style.transform = 'scale(1.5)';
+//     event.target.style.transition = 'all 0.25s';
+//     event.target.style.color = 'orange';
+// });
+
+// navAnchor.addEventListener('mouseleave', (e) => {
+// event.target.style.transform = 'scale(1)';
+// event.target.style.color = 'black';
+// });
 
 
 //------------------------------------------------------------------------------------
